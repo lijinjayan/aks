@@ -15,6 +15,10 @@ stages:
     - job: First
       steps:
       - bash: echo $(m2_home)
+      - bash: echo $(Build.BuildNumber)
+      - bash: echo $(Build.BuildId)
+      - bash: echo $(Build.SourceBranchName)
+
   - stage: Deploy
     jobs:
     - job: Second
