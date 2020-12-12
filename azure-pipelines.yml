@@ -19,5 +19,11 @@ jobs:
 - job: deploy 
   dependsOn: Build
   steps:
-    - script: echo Hello, world!
-      displayName: 'Run a one-line script'
+    - script: echo DEploy
+      displayName: 'Deploying'
+
+- job : Publish
+  dependsOn: deploy
+  steps:
+    - script: echo publish
+      displayName: 'publish'
