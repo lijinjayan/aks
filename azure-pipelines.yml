@@ -14,7 +14,7 @@ stages:
     jobs:
     - job: First
       steps:
-      - bash: echo "in first job in build"
+      - bash: echo $(m2_home)
   - stage: Deploy
     jobs:
     - job: Second
