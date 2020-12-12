@@ -9,21 +9,19 @@ trigger:
 pool:
    vmImage: 'ubuntu-latest'
 
-jobs:
-- job: Build
-  steps:
-  - script: echo Build Job
-    displayName: 'In Build Stage'
-
-
-- job: deploy 
-  dependsOn: Build
-  steps:
-    - script: echo DEploy
-      displayName: 'Deploying'
-
-- job : Publish
-  dependsOn: deploy
-  steps:
-    - script: echo publish
-      displayName: 'publish'
+stages:
+  - stage: Build
+    jobs:
+    - job: First
+      steps:
+      - bash: echo "in first job in build"
+  - stage: Deploy
+    jobs:
+    - job: Second
+      steps:
+      - bash: echo "in second job deploy"
+  - stage: Scan
+    jobs:
+    - job: third
+      steps:
+      - bash: echo "Scanning docker images"
