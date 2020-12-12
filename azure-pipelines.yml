@@ -12,10 +12,11 @@ pool:
 jobs:
 - job: Build
   steps:
-  - script: echo Hello, world!
-    displayName: 'Run a one-line script'
+  - script: echo Build Job
+    displayName: 'In Build Stage'
 
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+
+- job: deploy 
+    steps:
+    - script: echo Hello, world!
+      displayName: 'Run a one-line script'
