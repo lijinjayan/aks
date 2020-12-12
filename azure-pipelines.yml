@@ -18,6 +18,7 @@ stages:
       - bash: echo $(Build.BuildNumber)
       - bash: echo $(Build.BuildId)
       - bash: echo $(Build.SourceBranchName)
+      - bash: echo $(System.DefaultWorkingDirectory)
 
   - stage: Deploy
     jobs:
