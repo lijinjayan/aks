@@ -27,3 +27,4 @@ stages:
     - job: third
       steps:
       - bash: echo "Scanning docker images"
+      - bash: echo $(ant_home)
