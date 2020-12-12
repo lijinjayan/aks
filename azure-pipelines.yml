@@ -21,6 +21,8 @@ stages:
       steps:
       - bash: echo "in second job deploy"
   - stage: Scan
+    variables:
+     ant_home: /home/lijin/ant_home
     jobs:
     - job: third
       steps:
